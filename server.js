@@ -19,8 +19,13 @@ rollbar.log('Hello world!')
 const data1 = 'button 1 is working'
 const data2 = 'button 2 is working'
 const data3 = 'button 3 is working'
+//=========================
+app.get('/', (req, res) => {
+    rollbar.info("someone loaded that html woot woot")
+    res.sendFile(path.join(__dirname, '/index.html'))
+})
 
-
+//=======================
 app.get('/api/data1', (req, res) => {
     rollbar.info('button 1 was clicked')
    
