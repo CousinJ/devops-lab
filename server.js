@@ -6,7 +6,16 @@ const path = require('path')
 const cors = require('cors')
 app.use(express.json())
 app.use(cors());
+//================================
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: '27fa2a7bdee845f199a421485d6ae786',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
 
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!')
 const data1 = 'button 1 is working'
 const data2 = 'button 2 is working'
 const data3 = 'button 3 is working'
