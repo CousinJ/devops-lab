@@ -22,12 +22,13 @@ const data3 = 'button 3 is working'
 
 
 app.get('/api/data1', (req, res) => {
+    rollbar.info('button 1 was clicked')
    
     res.status(200).send(data1)
 })
 //=============================================
 app.get('/api/data2', (req, res) => {
-   
+   rollbar.critical('crazy error happening')
     res.status(200).send(data2)
 })
 //============================================
