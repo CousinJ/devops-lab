@@ -18,7 +18,7 @@
         const button3= document.getElementById('3')
 
         function button1Function() {
-            axios.get('http://localhost:5050/api/data1').then((res) => {
+            axios.get('/api/data1').then((res) => {
                 alert(res.data)
             })
         }
@@ -26,7 +26,7 @@
         button1.addEventListener('click', button1Function)
         //===================================================
         function button2Function() {
-            axios.get('http://localhost:5050/api/data2').then((res) => {
+            axios.get('/api/data2').then((res) => {
                 alert(res.data)
             })
         }
